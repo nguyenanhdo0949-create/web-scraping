@@ -4,14 +4,38 @@ import pandas as pd
 import time
 import random
 
+def safe_goto(page, url, retries=3):
+    for i in range(retries):
+        try:
+            page.goto(url, timeout=60000)
+            return True
+        except:
+            print(f"Retry {i+1}...")
+            time.sleep(2)
+    return False
+
+
+def human_behavior(page):
+    time.sleep(random.uniform(1.5, 3.5))
+    page.mouse.move(random.randint(100, 400), random.randint(100, 400))
+    page.mouse.wheel(0, random.randint(300, 800))
+
+
 def scrape_books(page):
     data = []
-    for i in range(1, 3):
-        url = f"https://books.toscrape.com/catalogue/page-{i}.html"
-        page.goto(url)
-        page.wait_for_selector(".product_pod")
+    page_num = 1
 
+    while True:
+        url = f"https://books.toscrape.com/catalogue/page-{page_num}.html"
+
+        if not safe_goto(page, url):
+            break
+
+        page.wait_for_selector(".product_pod")
         books = page.query_selector_all(".product_pod")
+
+        if not books:
+            break
 
         for book in books:
             title = book.query_selector("h3 a").get_attribute("title")
@@ -22,14 +46,20 @@ def scrape_books(page):
                 "price": price,
                 "source": "books"
             })
+
+        human_behavior(page)
+        page_num += 1
+
     return data
 
 
 def scrape_quotes(page):
     data = []
-    page.goto("https://quotes.toscrape.com/")
-    page.wait_for_selector(".quote")
 
+    if not safe_goto(page, "https://quotes.toscrape.com/"):
+        return data
+
+    page.wait_for_selector(".quote")
     quotes = page.query_selector_all(".quote")
 
     for q in quotes:
@@ -41,6 +71,7 @@ def scrape_quotes(page):
             "price": author,
             "source": "quotes"
         })
+
     return data
 
 
@@ -57,18 +88,22 @@ def scrape_all():
 
         page = context.new_page()
 
-        time.sleep(random.uniform(1, 2))
-        all_data += scrape_books(page)
+        # 🔥 stealth
+        page.add_init_script("""
+        Object.defineProperty(navigator, 'webdriver', {
+            get: () => undefined
+        })
+        """)
 
-        time.sleep(random.uniform(1, 2))
+        all_data += scrape_books(page)
         all_data += scrape_quotes(page)
 
         browser.close()
 
+    # lưu file
     with open("data/products.json", "w", encoding="utf-8") as f:
         json.dump(all_data, f, indent=4, ensure_ascii=False)
 
-    df = pd.DataFrame(all_data)
-    df.to_csv("data/products.csv", index=False)
+    pd.DataFrame(all_data).to_csv("data/products.csv", index=False)
 
     return all_data

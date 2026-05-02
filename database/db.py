@@ -21,6 +21,7 @@ def insert_data(data):
     conn = sqlite3.connect("database/products.db")
     cursor = conn.cursor()
 
+    # reset dữ liệu
     cursor.execute("DELETE FROM products")
 
     for item in data:
