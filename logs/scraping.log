@@ -1,0 +1,310 @@
+[2026-05-11 12:05:11] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:05:22] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:06:22] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:06:23] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:07:11] INFO     main — ============================================================
+[2026-05-11 12:07:11] INFO     main —   Web Scraping Project — Full Pipeline Start
+[2026-05-11 12:07:11] INFO     main — ============================================================
+[2026-05-11 12:07:11] INFO     main — [0/4] Khởi tạo database...
+[2026-05-11 12:07:11] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:07:11] INFO     main — [1/4] Playwright → books.toscrape.com...
+[2026-05-11 12:07:21] INFO     playwright — [Playwright] Starting books.toscrape.com scraper...
+[2026-05-11 12:07:21] INFO     playwright —   [Playwright] Books page 1 → https://books.toscrape.com/
+[2026-05-11 12:07:27] INFO     playwright —   [Playwright] Books page 2 → https://books.toscrape.com/catalogue/page-2.html
+[2026-05-11 12:07:29] INFO     playwright —   [Playwright] Books page 3 → https://books.toscrape.com/catalogue/page-3.html
+[2026-05-11 12:07:31] INFO     playwright —   [Playwright] Books page 4 → https://books.toscrape.com/catalogue/page-4.html
+[2026-05-11 12:07:34] INFO     playwright —   [Playwright] Books page 5 → https://books.toscrape.com/catalogue/page-5.html
+[2026-05-11 12:07:37] INFO     playwright —   [Playwright] Books page 6 → https://books.toscrape.com/catalogue/page-6.html
+[2026-05-11 12:07:39] INFO     playwright —   [Playwright] Books page 7 → https://books.toscrape.com/catalogue/page-7.html
+[2026-05-11 12:07:42] INFO     playwright —   [Playwright] Books page 8 → https://books.toscrape.com/catalogue/page-8.html
+[2026-05-11 12:07:45] INFO     playwright —   [Playwright] Books page 9 → https://books.toscrape.com/catalogue/page-9.html
+[2026-05-11 12:07:47] INFO     playwright —   [Playwright] Books page 10 → https://books.toscrape.com/catalogue/page-10.html
+[2026-05-11 12:07:49] INFO     playwright —   [Playwright] Books page 11 → https://books.toscrape.com/catalogue/page-11.html
+[2026-05-11 12:07:51] INFO     playwright —   [Playwright] Books page 12 → https://books.toscrape.com/catalogue/page-12.html
+[2026-05-11 12:07:54] INFO     playwright —   [Playwright] Books page 13 → https://books.toscrape.com/catalogue/page-13.html
+[2026-05-11 12:07:57] INFO     playwright —   [Playwright] Books page 14 → https://books.toscrape.com/catalogue/page-14.html
+[2026-05-11 12:07:59] INFO     playwright —   [Playwright] Books page 15 → https://books.toscrape.com/catalogue/page-15.html
+[2026-05-11 12:08:02] INFO     playwright —   [Playwright] Books page 16 → https://books.toscrape.com/catalogue/page-16.html
+[2026-05-11 12:08:04] INFO     playwright —   [Playwright] Books page 17 → https://books.toscrape.com/catalogue/page-17.html
+[2026-05-11 12:08:06] INFO     playwright —   [Playwright] Books page 18 → https://books.toscrape.com/catalogue/page-18.html
+[2026-05-11 12:08:09] INFO     playwright —   [Playwright] Books page 19 → https://books.toscrape.com/catalogue/page-19.html
+[2026-05-11 12:08:12] INFO     playwright —   [Playwright] Books page 20 → https://books.toscrape.com/catalogue/page-20.html
+[2026-05-11 12:08:14] INFO     playwright —   [Playwright] Books page 21 → https://books.toscrape.com/catalogue/page-21.html
+[2026-05-11 12:08:17] INFO     playwright —   [Playwright] Books page 22 → https://books.toscrape.com/catalogue/page-22.html
+[2026-05-11 12:08:19] INFO     playwright —   [Playwright] Books page 23 → https://books.toscrape.com/catalogue/page-23.html
+[2026-05-11 12:08:22] INFO     playwright —   [Playwright] Books page 24 → https://books.toscrape.com/catalogue/page-24.html
+[2026-05-11 12:08:25] INFO     playwright —   [Playwright] Books page 25 → https://books.toscrape.com/catalogue/page-25.html
+[2026-05-11 12:08:27] INFO     playwright —   [Playwright] Books page 26 → https://books.toscrape.com/catalogue/page-26.html
+[2026-05-11 12:08:30] INFO     playwright —   [Playwright] Books page 27 → https://books.toscrape.com/catalogue/page-27.html
+[2026-05-11 12:08:33] INFO     playwright —   [Playwright] Books page 28 → https://books.toscrape.com/catalogue/page-28.html
+[2026-05-11 12:08:35] INFO     playwright —   [Playwright] Books page 29 → https://books.toscrape.com/catalogue/page-29.html
+[2026-05-11 12:08:37] INFO     playwright —   [Playwright] Books page 30 → https://books.toscrape.com/catalogue/page-30.html
+[2026-05-11 12:08:40] INFO     playwright —   [Playwright] Books page 31 → https://books.toscrape.com/catalogue/page-31.html
+[2026-05-11 12:08:43] INFO     playwright —   [Playwright] Books page 32 → https://books.toscrape.com/catalogue/page-32.html
+[2026-05-11 12:08:45] INFO     playwright —   [Playwright] Books page 33 → https://books.toscrape.com/catalogue/page-33.html
+[2026-05-11 12:08:48] INFO     playwright —   [Playwright] Books page 34 → https://books.toscrape.com/catalogue/page-34.html
+[2026-05-11 12:08:51] INFO     playwright —   [Playwright] Books page 35 → https://books.toscrape.com/catalogue/page-35.html
+[2026-05-11 12:08:52] INFO     playwright —   [Playwright] Books page 36 → https://books.toscrape.com/catalogue/page-36.html
+[2026-05-11 12:08:55] INFO     playwright —   [Playwright] Books page 37 → https://books.toscrape.com/catalogue/page-37.html
+[2026-05-11 12:08:57] INFO     playwright —   [Playwright] Books page 38 → https://books.toscrape.com/catalogue/page-38.html
+[2026-05-11 12:09:00] INFO     playwright —   [Playwright] Books page 39 → https://books.toscrape.com/catalogue/page-39.html
+[2026-05-11 12:09:02] INFO     playwright —   [Playwright] Books page 40 → https://books.toscrape.com/catalogue/page-40.html
+[2026-05-11 12:09:05] INFO     playwright —   [Playwright] Books page 41 → https://books.toscrape.com/catalogue/page-41.html
+[2026-05-11 12:09:07] INFO     playwright —   [Playwright] Books page 42 → https://books.toscrape.com/catalogue/page-42.html
+[2026-05-11 12:09:10] INFO     playwright —   [Playwright] Books page 43 → https://books.toscrape.com/catalogue/page-43.html
+[2026-05-11 12:09:12] INFO     playwright —   [Playwright] Books page 44 → https://books.toscrape.com/catalogue/page-44.html
+[2026-05-11 12:09:14] INFO     playwright —   [Playwright] Books page 45 → https://books.toscrape.com/catalogue/page-45.html
+[2026-05-11 12:09:16] INFO     playwright —   [Playwright] Books page 46 → https://books.toscrape.com/catalogue/page-46.html
+[2026-05-11 12:09:18] INFO     playwright —   [Playwright] Books page 47 → https://books.toscrape.com/catalogue/page-47.html
+[2026-05-11 12:09:20] INFO     playwright —   [Playwright] Books page 48 → https://books.toscrape.com/catalogue/page-48.html
+[2026-05-11 12:09:22] INFO     playwright —   [Playwright] Books page 49 → https://books.toscrape.com/catalogue/page-49.html
+[2026-05-11 12:09:24] INFO     playwright —   [Playwright] Books page 50 → https://books.toscrape.com/catalogue/page-50.html
+[2026-05-11 12:09:24] INFO     playwright —   [Playwright] Last page reached
+[2026-05-11 12:09:24] INFO     playwright —   [Playwright] Total books collected: 1000
+[2026-05-11 12:09:25] INFO     playwright — [Playwright] Saved 1000 books → D:\web-scraping-project\data\books.json
+[2026-05-11 12:09:25] INFO     database — Inserted 1000 books
+[2026-05-11 12:09:25] INFO     main —   ✓ Đã lưu 1000 sách vào DB
+[2026-05-11 12:09:25] INFO     main — [2/4] Selenium → quotes.toscrape.com/js/ ...
+[2026-05-11 12:09:26] INFO     selenium — [Selenium] Starting quotes.toscrape.com/js/ scraper...
+[2026-05-11 12:09:37] INFO     selenium —   [Selenium] JS-Quotes page 1 → https://quotes.toscrape.com/js/
+[2026-05-11 12:09:40] INFO     selenium —   [Selenium] JS-Quotes page 2 → https://quotes.toscrape.com/js/page/2/
+[2026-05-11 12:09:43] INFO     selenium —   [Selenium] JS-Quotes page 3 → https://quotes.toscrape.com/js/page/3/
+[2026-05-11 12:09:45] INFO     selenium —   [Selenium] JS-Quotes page 4 → https://quotes.toscrape.com/js/page/4/
+[2026-05-11 12:09:46] INFO     selenium —   [Selenium] JS-Quotes page 5 → https://quotes.toscrape.com/js/page/5/
+[2026-05-11 12:09:48] INFO     selenium —   [Selenium] JS-Quotes page 6 → https://quotes.toscrape.com/js/page/6/
+[2026-05-11 12:09:50] INFO     selenium —   [Selenium] JS-Quotes page 7 → https://quotes.toscrape.com/js/page/7/
+[2026-05-11 12:09:52] INFO     selenium —   [Selenium] JS-Quotes page 8 → https://quotes.toscrape.com/js/page/8/
+[2026-05-11 12:09:54] INFO     selenium —   [Selenium] JS-Quotes page 9 → https://quotes.toscrape.com/js/page/9/
+[2026-05-11 12:09:56] INFO     selenium —   [Selenium] JS-Quotes page 10 → https://quotes.toscrape.com/js/page/10/
+[2026-05-11 12:09:58] INFO     selenium —   [Selenium] Last page reached
+[2026-05-11 12:10:00] INFO     selenium —   [Selenium] Total JS-quotes collected: 100
+[2026-05-11 12:10:00] INFO     selenium — [Selenium] Saved 100 quotes → D:\web-scraping-project\data\quotes_selenium.json
+[2026-05-11 12:10:00] INFO     database — Inserted 100 quotes (scraped_by=selenium)
+[2026-05-11 12:10:00] INFO     main —   ✓ Đã lưu 100 quotes (Selenium) vào DB
+[2026-05-11 12:10:00] INFO     main — [3/4] Scrapy → quotes.toscrape.com ...
+[2026-05-11 12:10:00] INFO     main — [Scrapy] Launching quotes_spider via subprocess...
+[2026-05-11 12:10:02] ERROR    main — [Scrapy] Error:
+engine] INFO: Spider closed (shutdown)
+2026-05-11 12:10:02 [asyncio] ERROR: Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<AsyncCrawlerRunner._crawl.<locals>._crawl_and_track() done, defined at D:\web-scraping-project\venv\Lib\site-packages\scrapy\crawler.py:577> exception=OperationalError('unable to open database file')>
+Traceback (most recent call last):
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\crawler.py", line 579, in _crawl_and_track
+    await crawler.crawl_async(*args, **kwargs)
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\crawler.py", line 221, in crawl_async
+    await self.engine.open_spider_async()
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\core\engine.py", line 543, in open_spider_async
+    await self.scraper.open_spider_async()
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\core\scraper.py", line 175, in open_spider_async
+    await self.itemproc.open_spider_async()
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 127, in open_spider_async
+    await self._process_parallel("open_spider")
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 114, in _process_parallel
+    return await self._process_parallel_asyncio(methodname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 108, in _process_parallel_asyncio
+    awaitables = [get_awaitable(m) for m in methods]
+                  ~~~~~~~~~~~~~^^^
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 103, in get_awaitable
+    result = method(self._spider)
+  File "D:\web-scraping-project\scraper\scrapy_crawler\quotes_crawler\pipelines.py", line 45, in open_spider
+    self.conn = sqlite3.connect(db_path)
+                ~~~~~~~~~~~~~~~^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+
+[2026-05-11 12:10:02] INFO     main — ============================================================
+[2026-05-11 12:10:02] INFO     main —   Pipeline hoàn tất trong 171.45s
+[2026-05-11 12:10:02] INFO     main — ============================================================
+[2026-05-11 12:10:24] INFO     main — ============================================================
+[2026-05-11 12:10:24] INFO     main —   Web Scraping Project — Full Pipeline Start
+[2026-05-11 12:10:24] INFO     main — ============================================================
+[2026-05-11 12:10:24] INFO     main — [0/4] Khởi tạo database...
+[2026-05-11 12:10:24] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:10:24] INFO     main — [1/4] Playwright → books.toscrape.com...
+[2026-05-11 12:10:25] INFO     playwright — [Playwright] Starting books.toscrape.com scraper...
+[2026-05-11 12:10:25] INFO     playwright —   [Playwright] Books page 1 → https://books.toscrape.com/
+[2026-05-11 12:10:29] INFO     playwright —   [Playwright] Books page 2 → https://books.toscrape.com/catalogue/page-2.html
+[2026-05-11 12:10:32] INFO     playwright —   [Playwright] Books page 3 → https://books.toscrape.com/catalogue/page-3.html
+[2026-05-11 12:10:35] INFO     playwright —   [Playwright] Books page 4 → https://books.toscrape.com/catalogue/page-4.html
+[2026-05-11 12:10:37] INFO     playwright —   [Playwright] Books page 5 → https://books.toscrape.com/catalogue/page-5.html
+[2026-05-11 12:10:39] INFO     playwright —   [Playwright] Books page 6 → https://books.toscrape.com/catalogue/page-6.html
+[2026-05-11 12:10:41] INFO     playwright —   [Playwright] Books page 7 → https://books.toscrape.com/catalogue/page-7.html
+[2026-05-11 12:10:43] INFO     playwright —   [Playwright] Books page 8 → https://books.toscrape.com/catalogue/page-8.html
+[2026-05-11 12:10:45] INFO     playwright —   [Playwright] Books page 9 → https://books.toscrape.com/catalogue/page-9.html
+[2026-05-11 12:10:47] INFO     playwright —   [Playwright] Books page 10 → https://books.toscrape.com/catalogue/page-10.html
+[2026-05-11 12:10:49] INFO     playwright —   [Playwright] Books page 11 → https://books.toscrape.com/catalogue/page-11.html
+[2026-05-11 12:10:52] INFO     playwright —   [Playwright] Books page 12 → https://books.toscrape.com/catalogue/page-12.html
+[2026-05-11 12:10:55] INFO     playwright —   [Playwright] Books page 13 → https://books.toscrape.com/catalogue/page-13.html
+[2026-05-11 12:10:57] INFO     playwright —   [Playwright] Books page 14 → https://books.toscrape.com/catalogue/page-14.html
+[2026-05-11 12:10:59] INFO     playwright —   [Playwright] Books page 15 → https://books.toscrape.com/catalogue/page-15.html
+[2026-05-11 12:11:03] INFO     playwright —   [Playwright] Books page 16 → https://books.toscrape.com/catalogue/page-16.html
+[2026-05-11 12:11:06] INFO     playwright —   [Playwright] Books page 17 → https://books.toscrape.com/catalogue/page-17.html
+[2026-05-11 12:11:10] INFO     playwright —   [Playwright] Books page 18 → https://books.toscrape.com/catalogue/page-18.html
+[2026-05-11 12:11:13] INFO     playwright —   [Playwright] Books page 19 → https://books.toscrape.com/catalogue/page-19.html
+[2026-05-11 12:11:16] INFO     playwright —   [Playwright] Books page 20 → https://books.toscrape.com/catalogue/page-20.html
+[2026-05-11 12:11:20] INFO     playwright —   [Playwright] Books page 21 → https://books.toscrape.com/catalogue/page-21.html
+[2026-05-11 12:11:23] INFO     playwright —   [Playwright] Books page 22 → https://books.toscrape.com/catalogue/page-22.html
+[2026-05-11 12:11:27] INFO     playwright —   [Playwright] Books page 23 → https://books.toscrape.com/catalogue/page-23.html
+[2026-05-11 12:11:30] INFO     playwright —   [Playwright] Books page 24 → https://books.toscrape.com/catalogue/page-24.html
+[2026-05-11 12:11:33] INFO     playwright —   [Playwright] Books page 25 → https://books.toscrape.com/catalogue/page-25.html
+[2026-05-11 12:11:37] INFO     playwright —   [Playwright] Books page 26 → https://books.toscrape.com/catalogue/page-26.html
+[2026-05-11 12:11:41] INFO     playwright —   [Playwright] Books page 27 → https://books.toscrape.com/catalogue/page-27.html
+[2026-05-11 12:11:43] INFO     playwright —   [Playwright] Books page 28 → https://books.toscrape.com/catalogue/page-28.html
+[2026-05-11 12:11:46] INFO     playwright —   [Playwright] Books page 29 → https://books.toscrape.com/catalogue/page-29.html
+[2026-05-11 12:11:48] INFO     playwright —   [Playwright] Books page 30 → https://books.toscrape.com/catalogue/page-30.html
+[2026-05-11 12:11:50] INFO     playwright —   [Playwright] Books page 31 → https://books.toscrape.com/catalogue/page-31.html
+[2026-05-11 12:11:53] INFO     playwright —   [Playwright] Books page 32 → https://books.toscrape.com/catalogue/page-32.html
+[2026-05-11 12:11:55] INFO     playwright —   [Playwright] Books page 33 → https://books.toscrape.com/catalogue/page-33.html
+[2026-05-11 12:11:57] INFO     playwright —   [Playwright] Books page 34 → https://books.toscrape.com/catalogue/page-34.html
+[2026-05-11 12:11:59] INFO     playwright —   [Playwright] Books page 35 → https://books.toscrape.com/catalogue/page-35.html
+[2026-05-11 12:12:01] INFO     playwright —   [Playwright] Books page 36 → https://books.toscrape.com/catalogue/page-36.html
+[2026-05-11 12:12:04] INFO     playwright —   [Playwright] Books page 37 → https://books.toscrape.com/catalogue/page-37.html
+[2026-05-11 12:12:06] INFO     playwright —   [Playwright] Books page 38 → https://books.toscrape.com/catalogue/page-38.html
+[2026-05-11 12:12:09] INFO     playwright —   [Playwright] Books page 39 → https://books.toscrape.com/catalogue/page-39.html
+[2026-05-11 12:12:11] INFO     playwright —   [Playwright] Books page 40 → https://books.toscrape.com/catalogue/page-40.html
+[2026-05-11 12:12:13] INFO     playwright —   [Playwright] Books page 41 → https://books.toscrape.com/catalogue/page-41.html
+[2026-05-11 12:12:15] INFO     playwright —   [Playwright] Books page 42 → https://books.toscrape.com/catalogue/page-42.html
+[2026-05-11 12:12:17] INFO     playwright —   [Playwright] Books page 43 → https://books.toscrape.com/catalogue/page-43.html
+[2026-05-11 12:12:19] INFO     playwright —   [Playwright] Books page 44 → https://books.toscrape.com/catalogue/page-44.html
+[2026-05-11 12:12:21] INFO     playwright —   [Playwright] Books page 45 → https://books.toscrape.com/catalogue/page-45.html
+[2026-05-11 12:12:23] INFO     playwright —   [Playwright] Books page 46 → https://books.toscrape.com/catalogue/page-46.html
+[2026-05-11 12:12:25] INFO     playwright —   [Playwright] Books page 47 → https://books.toscrape.com/catalogue/page-47.html
+[2026-05-11 12:12:27] INFO     playwright —   [Playwright] Books page 48 → https://books.toscrape.com/catalogue/page-48.html
+[2026-05-11 12:12:29] INFO     playwright —   [Playwright] Books page 49 → https://books.toscrape.com/catalogue/page-49.html
+[2026-05-11 12:12:31] INFO     playwright —   [Playwright] Books page 50 → https://books.toscrape.com/catalogue/page-50.html
+[2026-05-11 12:12:32] INFO     playwright —   [Playwright] Last page reached
+[2026-05-11 12:12:32] INFO     playwright —   [Playwright] Total books collected: 1000
+[2026-05-11 12:12:32] INFO     playwright — [Playwright] Saved 1000 books → D:\web-scraping-project\data\books.json
+[2026-05-11 12:12:32] INFO     database — Inserted 1000 books
+[2026-05-11 12:12:32] INFO     main —   ✓ Đã lưu 1000 sách vào DB
+[2026-05-11 12:12:32] INFO     main — [2/4] Selenium → quotes.toscrape.com/js/ ...
+[2026-05-11 12:12:32] INFO     selenium — [Selenium] Starting quotes.toscrape.com/js/ scraper...
+[2026-05-11 12:12:35] INFO     selenium —   [Selenium] JS-Quotes page 1 → https://quotes.toscrape.com/js/
+[2026-05-11 12:12:39] INFO     selenium —   [Selenium] JS-Quotes page 2 → https://quotes.toscrape.com/js/page/2/
+[2026-05-11 12:12:41] INFO     selenium —   [Selenium] JS-Quotes page 3 → https://quotes.toscrape.com/js/page/3/
+[2026-05-11 12:12:42] INFO     selenium —   [Selenium] JS-Quotes page 4 → https://quotes.toscrape.com/js/page/4/
+[2026-05-11 12:12:44] INFO     selenium —   [Selenium] JS-Quotes page 5 → https://quotes.toscrape.com/js/page/5/
+[2026-05-11 12:12:47] INFO     selenium —   [Selenium] JS-Quotes page 6 → https://quotes.toscrape.com/js/page/6/
+[2026-05-11 12:12:48] INFO     selenium —   [Selenium] JS-Quotes page 7 → https://quotes.toscrape.com/js/page/7/
+[2026-05-11 12:12:50] INFO     selenium —   [Selenium] JS-Quotes page 8 → https://quotes.toscrape.com/js/page/8/
+[2026-05-11 12:12:51] INFO     selenium —   [Selenium] JS-Quotes page 9 → https://quotes.toscrape.com/js/page/9/
+[2026-05-11 12:12:53] INFO     selenium —   [Selenium] JS-Quotes page 10 → https://quotes.toscrape.com/js/page/10/
+[2026-05-11 12:12:55] INFO     selenium —   [Selenium] Last page reached
+[2026-05-11 12:12:57] INFO     selenium —   [Selenium] Total JS-quotes collected: 100
+[2026-05-11 12:12:57] INFO     selenium — [Selenium] Saved 100 quotes → D:\web-scraping-project\data\quotes_selenium.json
+[2026-05-11 12:12:57] INFO     database — Inserted 100 quotes (scraped_by=selenium)
+[2026-05-11 12:12:57] INFO     main —   ✓ Đã lưu 100 quotes (Selenium) vào DB
+[2026-05-11 12:12:57] INFO     main — [3/4] Scrapy → quotes.toscrape.com ...
+[2026-05-11 12:12:57] INFO     main — [Scrapy] Launching quotes_spider via subprocess...
+[2026-05-11 12:12:58] ERROR    main — [Scrapy] Error:
+engine] INFO: Spider closed (shutdown)
+2026-05-11 12:12:58 [asyncio] ERROR: Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<AsyncCrawlerRunner._crawl.<locals>._crawl_and_track() done, defined at D:\web-scraping-project\venv\Lib\site-packages\scrapy\crawler.py:577> exception=OperationalError('unable to open database file')>
+Traceback (most recent call last):
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\crawler.py", line 579, in _crawl_and_track
+    await crawler.crawl_async(*args, **kwargs)
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\crawler.py", line 221, in crawl_async
+    await self.engine.open_spider_async()
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\core\engine.py", line 543, in open_spider_async
+    await self.scraper.open_spider_async()
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\core\scraper.py", line 175, in open_spider_async
+    await self.itemproc.open_spider_async()
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 127, in open_spider_async
+    await self._process_parallel("open_spider")
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 114, in _process_parallel
+    return await self._process_parallel_asyncio(methodname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 108, in _process_parallel_asyncio
+    awaitables = [get_awaitable(m) for m in methods]
+                  ~~~~~~~~~~~~~^^^
+  File "D:\web-scraping-project\venv\Lib\site-packages\scrapy\pipelines\__init__.py", line 103, in get_awaitable
+    result = method(self._spider)
+  File "D:\web-scraping-project\scraper\scrapy_crawler\quotes_crawler\pipelines.py", line 45, in open_spider
+    self.conn = sqlite3.connect(db_path)
+                ~~~~~~~~~~~~~~~^^^^^^^^^
+sqlite3.OperationalError: unable to open database file
+
+[2026-05-11 12:12:58] INFO     main — ============================================================
+[2026-05-11 12:12:58] INFO     main —   Pipeline hoàn tất trong 154.66s
+[2026-05-11 12:12:58] INFO     main — ============================================================
+[2026-05-11 12:13:03] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:13:31] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:14:36] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:14:56] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:23:29] INFO     main — ============================================================
+[2026-05-11 12:23:29] INFO     main —   Web Scraping Project — Full Pipeline Start
+[2026-05-11 12:23:29] INFO     main — ============================================================
+[2026-05-11 12:23:29] INFO     main — [0/4] Khởi tạo database...
+[2026-05-11 12:23:29] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 12:23:29] INFO     main — [1/4] Playwright → books.toscrape.com...
+[2026-05-11 12:23:50] INFO     playwright — [Playwright] Starting books.toscrape.com scraper...
+[2026-05-11 12:23:50] INFO     playwright —   [Playwright] Books page 1 → https://books.toscrape.com/
+[2026-05-11 12:23:57] INFO     playwright —   [Playwright] Books page 2 → https://books.toscrape.com/catalogue/page-2.html
+[2026-05-11 12:24:01] INFO     playwright —   [Playwright] Books page 3 → https://books.toscrape.com/catalogue/page-3.html
+[2026-05-11 12:24:06] INFO     playwright —   [Playwright] Books page 4 → https://books.toscrape.com/catalogue/page-4.html
+[2026-05-11 12:24:08] INFO     playwright —   [Playwright] Books page 5 → https://books.toscrape.com/catalogue/page-5.html
+[2026-05-11 12:24:10] INFO     playwright —   [Playwright] Books page 6 → https://books.toscrape.com/catalogue/page-6.html
+[2026-05-11 12:24:13] INFO     playwright —   [Playwright] Books page 7 → https://books.toscrape.com/catalogue/page-7.html
+[2026-05-11 12:24:15] INFO     playwright —   [Playwright] Books page 8 → https://books.toscrape.com/catalogue/page-8.html
+[2026-05-11 12:24:17] INFO     playwright —   [Playwright] Books page 9 → https://books.toscrape.com/catalogue/page-9.html
+[2026-05-11 12:24:19] INFO     playwright —   [Playwright] Books page 10 → https://books.toscrape.com/catalogue/page-10.html
+[2026-05-11 12:24:21] INFO     playwright —   [Playwright] Books page 11 → https://books.toscrape.com/catalogue/page-11.html
+[2026-05-11 12:24:22] INFO     playwright —   [Playwright] Books page 12 → https://books.toscrape.com/catalogue/page-12.html
+[2026-05-11 12:24:25] INFO     playwright —   [Playwright] Books page 13 → https://books.toscrape.com/catalogue/page-13.html
+[2026-05-11 12:24:27] INFO     playwright —   [Playwright] Books page 14 → https://books.toscrape.com/catalogue/page-14.html
+[2026-05-11 12:24:29] INFO     playwright —   [Playwright] Books page 15 → https://books.toscrape.com/catalogue/page-15.html
+[2026-05-11 12:24:31] INFO     playwright —   [Playwright] Books page 16 → https://books.toscrape.com/catalogue/page-16.html
+[2026-05-11 12:24:33] INFO     playwright —   [Playwright] Books page 17 → https://books.toscrape.com/catalogue/page-17.html
+[2026-05-11 12:24:35] INFO     playwright —   [Playwright] Books page 18 → https://books.toscrape.com/catalogue/page-18.html
+[2026-05-11 12:24:37] INFO     playwright —   [Playwright] Books page 19 → https://books.toscrape.com/catalogue/page-19.html
+[2026-05-11 12:24:39] INFO     playwright —   [Playwright] Books page 20 → https://books.toscrape.com/catalogue/page-20.html
+[2026-05-11 12:24:41] INFO     playwright —   [Playwright] Books page 21 → https://books.toscrape.com/catalogue/page-21.html
+[2026-05-11 12:24:42] INFO     playwright —   [Playwright] Books page 22 → https://books.toscrape.com/catalogue/page-22.html
+[2026-05-11 12:24:45] INFO     playwright —   [Playwright] Books page 23 → https://books.toscrape.com/catalogue/page-23.html
+[2026-05-11 12:24:48] INFO     playwright —   [Playwright] Books page 24 → https://books.toscrape.com/catalogue/page-24.html
+[2026-05-11 12:24:50] INFO     playwright —   [Playwright] Books page 25 → https://books.toscrape.com/catalogue/page-25.html
+[2026-05-11 12:24:52] INFO     playwright —   [Playwright] Books page 26 → https://books.toscrape.com/catalogue/page-26.html
+[2026-05-11 12:24:55] INFO     playwright —   [Playwright] Books page 27 → https://books.toscrape.com/catalogue/page-27.html
+[2026-05-11 12:24:57] INFO     playwright —   [Playwright] Books page 28 → https://books.toscrape.com/catalogue/page-28.html
+[2026-05-11 12:24:59] INFO     playwright —   [Playwright] Books page 29 → https://books.toscrape.com/catalogue/page-29.html
+[2026-05-11 12:25:01] INFO     playwright —   [Playwright] Books page 30 → https://books.toscrape.com/catalogue/page-30.html
+[2026-05-11 12:25:03] INFO     playwright —   [Playwright] Books page 31 → https://books.toscrape.com/catalogue/page-31.html
+[2026-05-11 12:25:05] INFO     playwright —   [Playwright] Books page 32 → https://books.toscrape.com/catalogue/page-32.html
+[2026-05-11 12:25:07] INFO     playwright —   [Playwright] Books page 33 → https://books.toscrape.com/catalogue/page-33.html
+[2026-05-11 12:25:09] INFO     playwright —   [Playwright] Books page 34 → https://books.toscrape.com/catalogue/page-34.html
+[2026-05-11 12:25:11] INFO     playwright —   [Playwright] Books page 35 → https://books.toscrape.com/catalogue/page-35.html
+[2026-05-11 12:25:13] INFO     playwright —   [Playwright] Books page 36 → https://books.toscrape.com/catalogue/page-36.html
+[2026-05-11 12:25:16] INFO     playwright —   [Playwright] Books page 37 → https://books.toscrape.com/catalogue/page-37.html
+[2026-05-11 12:25:18] INFO     playwright —   [Playwright] Books page 38 → https://books.toscrape.com/catalogue/page-38.html
+[2026-05-11 12:25:21] INFO     playwright —   [Playwright] Books page 39 → https://books.toscrape.com/catalogue/page-39.html
+[2026-05-11 12:25:23] INFO     playwright —   [Playwright] Books page 40 → https://books.toscrape.com/catalogue/page-40.html
+[2026-05-11 12:25:25] INFO     playwright —   [Playwright] Books page 41 → https://books.toscrape.com/catalogue/page-41.html
+[2026-05-11 12:25:27] INFO     playwright —   [Playwright] Books page 42 → https://books.toscrape.com/catalogue/page-42.html
+[2026-05-11 12:25:29] INFO     playwright —   [Playwright] Books page 43 → https://books.toscrape.com/catalogue/page-43.html
+[2026-05-11 12:25:31] INFO     playwright —   [Playwright] Books page 44 → https://books.toscrape.com/catalogue/page-44.html
+[2026-05-11 12:25:33] INFO     playwright —   [Playwright] Books page 45 → https://books.toscrape.com/catalogue/page-45.html
+[2026-05-11 12:25:35] INFO     playwright —   [Playwright] Books page 46 → https://books.toscrape.com/catalogue/page-46.html
+[2026-05-11 12:25:37] INFO     playwright —   [Playwright] Books page 47 → https://books.toscrape.com/catalogue/page-47.html
+[2026-05-11 12:25:39] INFO     playwright —   [Playwright] Books page 48 → https://books.toscrape.com/catalogue/page-48.html
+[2026-05-11 12:25:42] INFO     playwright —   [Playwright] Books page 49 → https://books.toscrape.com/catalogue/page-49.html
+[2026-05-11 12:25:45] INFO     playwright —   [Playwright] Books page 50 → https://books.toscrape.com/catalogue/page-50.html
+[2026-05-11 12:25:46] INFO     playwright —   [Playwright] Last page reached
+[2026-05-11 12:25:46] INFO     playwright —   [Playwright] Total books collected: 1000
+[2026-05-11 12:25:46] INFO     playwright — [Playwright] Saved 1000 books → D:\web-scraping-project\data\books.json
+[2026-05-11 12:25:46] INFO     database — Inserted 1000 books
+[2026-05-11 12:25:46] INFO     main —   ✓ Đã lưu 1000 sách vào DB
+[2026-05-11 12:25:46] INFO     main — [2/4] Selenium → quotes.toscrape.com/js/ ...
+[2026-05-11 12:25:46] INFO     selenium — [Selenium] Starting quotes.toscrape.com/js/ scraper...
+[2026-05-11 12:25:49] INFO     selenium —   [Selenium] JS-Quotes page 1 → https://quotes.toscrape.com/js/
+[2026-05-11 12:25:52] INFO     selenium —   [Selenium] No quotes on page 1 → stop
+[2026-05-11 12:26:37] INFO     selenium —   [Selenium] Total JS-quotes collected: 0
+[2026-05-11 12:26:37] INFO     selenium — [Selenium] Saved 0 quotes → D:\web-scraping-project\data\quotes_selenium.json
+[2026-05-11 12:26:37] WARNING  database — insert_quotes: empty list, skipping
+[2026-05-11 12:26:37] INFO     main —   ✓ Đã lưu 0 quotes (Selenium) vào DB
+[2026-05-11 12:26:37] INFO     main — [3/4] Scrapy → quotes.toscrape.com ...
+[2026-05-11 12:26:37] INFO     main — [Scrapy] Launching quotes_spider via subprocess...
+[2026-05-11 12:26:45] INFO     main — [Scrapy] quotes_spider completed successfully
+[2026-05-11 12:26:45] INFO     main — ============================================================
+[2026-05-11 12:26:45] INFO     main —   Pipeline hoàn tất trong 195.76s
+[2026-05-11 12:26:45] INFO     main — ============================================================
+[2026-05-11 13:14:06] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 13:14:07] INFO     database — Database ready → D:\web-scraping-project\database\products.db

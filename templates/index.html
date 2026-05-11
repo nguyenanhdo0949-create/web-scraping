@@ -1,56 +1,425 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-    <title>PRO Scraper</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web Scraping Dashboard - Playwright, Selenium, Scrapy">
+    <title>Web Scraping Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg:#0f1117; --surface:#1a1d27; --surface2:#22263a; --border:#2e3250;
+            --primary:#6c63ff; --primary-glow:rgba(108,99,255,0.25);
+            --accent:#00d4aa; --accent2:#ff6b6b; --accent3:#ffd93d;
+            --scrapy:#f97316; --text:#e8eaf0; --text-muted:#8b93b0; --radius:12px;
+        }
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;}
+        header{background:linear-gradient(135deg,#0f1117 0%,#1a1d27 50%,#0f1117 100%);border-bottom:1px solid var(--border);padding:18px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(10px);}
+        .logo{display:flex;align-items:center;gap:12px;}
+        .logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--primary),var(--accent));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+        .logo-text h1{font-size:18px;font-weight:700;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .logo-text span{font-size:12px;color:var(--text-muted);}
+        .header-actions{display:flex;gap:10px;align-items:center;}
+        main{max-width:1400px;margin:0 auto;padding:28px 24px;}
+        /* STATS */
+        .stats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:24px;}
+        .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;position:relative;overflow:hidden;transition:transform 0.2s,border-color 0.2s;}
+        .stat-card:hover{transform:translateY(-2px);border-color:var(--primary);}
+        .stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--card-color,var(--primary));}
+        .stat-card.c-total{--card-color:var(--accent3);}
+        .stat-card.c-books{--card-color:var(--primary);}
+        .stat-card.c-selenium{--card-color:var(--accent);}
+        .stat-card.c-scrapy{--card-color:var(--scrapy);}
+        .stat-card.c-updated{--card-color:#60a5fa;}
+        .stat-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;}
+        .stat-value{font-size:28px;font-weight:700;line-height:1;}
+        .stat-card.c-total .stat-value{color:var(--accent3);}
+        .stat-card.c-books .stat-value{color:var(--primary);}
+        .stat-card.c-selenium .stat-value{color:var(--accent);}
+        .stat-card.c-scrapy .stat-value{color:var(--scrapy);}
+        .stat-card.c-updated .stat-value{color:#60a5fa;font-size:13px;margin-top:6px;}
+        .stat-icon{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:36px;opacity:.08;}
+        .stat-sub{font-size:11px;color:var(--text-muted);margin-top:4px;}
+        /* TOOLBAR */
+        .toolbar{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-bottom:18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+        .search-wrap{position:relative;flex:1;min-width:200px;}
+        .search-wrap i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-muted);}
+        .search-input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:9px 12px 9px 36px;font-family:'Inter',sans-serif;font-size:14px;transition:border-color .2s;}
+        .search-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-glow);}
+        .filter-select{background:var(--bg);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:9px 12px;font-family:'Inter',sans-serif;font-size:14px;cursor:pointer;}
+        .filter-select:focus{outline:none;border-color:var(--primary);}
+        .btn{display:inline-flex;align-items:center;gap:6px;padding:9px 15px;border-radius:8px;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;border:none;transition:all .2s;text-decoration:none;white-space:nowrap;}
+        .btn-primary{background:linear-gradient(135deg,var(--primary),#8b85ff);color:#fff;}
+        .btn-primary:hover{transform:translateY(-1px);box-shadow:0 4px 15px var(--primary-glow);}
+        .btn-outline{background:transparent;border:1px solid var(--border);color:var(--text);}
+        .btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+        .btn-green{background:rgba(0,212,170,.15);border:1px solid var(--accent);color:var(--accent);}
+        .btn-green:hover{background:var(--accent);color:#000;}
+        .btn-run{background:linear-gradient(135deg,#6c63ff,#f97316);color:#fff;}
+        .btn-run:hover{opacity:.9;transform:translateY(-1px);}
+        .btn-run:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+        /* TABLE */
+        .table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+        .table-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+        .table-title{font-size:14px;font-weight:600;color:var(--text-muted);}
+        .result-count{font-size:13px;color:var(--text-muted);}
+        .result-count span{color:var(--primary);font-weight:600;}
+        table{width:100%;border-collapse:collapse;}
+        thead th{background:var(--surface2);padding:11px 14px;text-align:left;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--text-muted);border-bottom:1px solid var(--border);}
+        tbody tr{border-bottom:1px solid var(--border);transition:background .15s;}
+        tbody tr:last-child{border-bottom:none;}
+        tbody tr:hover{background:var(--surface2);}
+        td{padding:12px 14px;font-size:14px;vertical-align:middle;}
+        .td-title{font-weight:500;max-width:380px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+        .td-secondary{color:var(--accent3);font-weight:600;white-space:nowrap;}
+        .td-extra{font-size:12px;color:var(--text-muted);max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+        .badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;}
+        .badge-books{background:rgba(108,99,255,.15);color:var(--primary);border:1px solid rgba(108,99,255,.3);}
+        .badge-quotes{background:rgba(0,212,170,.15);color:var(--accent);border:1px solid rgba(0,212,170,.3);}
+        .badge-playwright{background:rgba(108,99,255,.1);color:#a78bfa;border:1px solid rgba(108,99,255,.2);font-size:10px;}
+        .badge-selenium{background:rgba(0,212,170,.1);color:var(--accent);border:1px solid rgba(0,212,170,.2);font-size:10px;}
+        .badge-scrapy{background:rgba(249,115,22,.1);color:var(--scrapy);border:1px solid rgba(249,115,22,.2);font-size:10px;}
+        .stars{color:var(--accent3);font-size:12px;}
+        /* SCRAPER STATUS */
+        #scraper-status-bar{display:none;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.3);border-radius:var(--radius);padding:12px 18px;margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+        #scraper-status-bar.hidden{display:none;}
+        .pulse{width:10px;height:10px;border-radius:50%;background:var(--accent3);animation:pulse 1.2s infinite;}
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.3);}}
+        /* PAGINATION */
+        .pagination-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--border);flex-wrap:wrap;gap:10px;}
+        .pagination{display:flex;gap:5px;}
+        .page-btn{width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:7px;font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--border);color:var(--text-muted);transition:all .2s;background:var(--bg);}
+        .page-btn:hover{border-color:var(--primary);color:var(--primary);}
+        .page-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+        .page-btn.disabled{opacity:.3;pointer-events:none;}
+        /* TOAST */
+        #toast{position:fixed;bottom:24px;right:24px;background:var(--surface);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;display:none;align-items:center;gap:8px;z-index:999;}
+        /* EMPTY */
+        .empty-state{text-align:center;padding:60px 20px;color:var(--text-muted);}
+        .empty-state i{font-size:48px;display:block;margin-bottom:12px;opacity:.4;}
+        /* LOG MODAL */
+        #log-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;align-items:center;justify-content:center;}
+        #log-modal.open{display:flex;}
+        .log-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);width:min(700px,95vw);max-height:80vh;overflow:hidden;display:flex;flex-direction:column;}
+        .log-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-weight:600;}
+        .log-body{overflow-y:auto;padding:14px 18px;font-family:monospace;font-size:12px;line-height:1.6;color:var(--text-muted);flex:1;}
+        @media(max-width:900px){.stats-grid{grid-template-columns:repeat(2,1fr);} header{padding:12px 16px;} main{padding:18px 12px;}}
+    </style>
 </head>
+<body>
 
-<body class="container mt-4">
+<header>
+    <div class="logo">
+        <div class="logo-icon">🕷️</div>
+        <div class="logo-text">
+            <h1>Web Scraping Dashboard</h1>
+            <span>Playwright · Selenium · Scrapy</span>
+        </div>
+    </div>
+    <div class="header-actions">
+        <button class="btn btn-run" id="btn-run-scraper" onclick="runScraper()">
+            <i class="bi bi-play-circle"></i> Chạy Scraper
+        </button>
+        <a href="/export/csv" class="btn btn-green" id="btn-export-csv">
+            <i class="bi bi-download"></i> CSV
+        </a>
+        <a href="/export/json" class="btn btn-outline" target="_blank">
+            <i class="bi bi-braces"></i> JSON API
+        </a>
+    </div>
+</header>
 
-<h2 class="text-center">🔥 Web Scraping PRO</h2>
+<main>
+    <!-- SCRAPER STATUS -->
+    <div id="scraper-status-bar" class="hidden">
+        <div class="pulse"></div>
+        <span id="scraper-status-msg">Đang chạy scrapers...</span>
+        <button class="btn btn-outline" style="margin-left:auto;padding:4px 10px;font-size:12px;" onclick="document.getElementById('log-modal').classList.add('open'); pollLog()">
+            <i class="bi bi-terminal"></i> Xem log
+        </button>
+    </div>
 
-<input class="form-control mb-3" id="search" onkeyup="searchRealtime()" placeholder="Search...">
+    <!-- STATS -->
+    <div class="stats-grid">
+        <div class="stat-card c-total">
+            <div class="stat-label">Tổng bản ghi</div>
+            <div class="stat-value">{{ stats.total }}</div>
+            <i class="bi bi-database stat-icon"></i>
+        </div>
+        <div class="stat-card c-books">
+            <div class="stat-label">📚 Sách (Playwright)</div>
+            <div class="stat-value">{{ stats.books_total }}</div>
+            <i class="bi bi-book stat-icon"></i>
+        </div>
+        <div class="stat-card c-selenium">
+            <div class="stat-label">💬 Quotes (Selenium)</div>
+            <div class="stat-value">{{ stats.quotes_selenium }}</div>
+            <i class="bi bi-robot stat-icon"></i>
+        </div>
+        <div class="stat-card c-scrapy">
+            <div class="stat-label">🕸️ Quotes (Scrapy)</div>
+            <div class="stat-value">{{ stats.quotes_scrapy }}</div>
+            <i class="bi bi-share-fill stat-icon"></i>
+        </div>
+        <div class="stat-card c-updated">
+            <div class="stat-label">Cập nhật lần cuối</div>
+            <div class="stat-value">{{ stats.last_updated[:16] if stats.last_updated != 'Never' else 'Chưa có' }}</div>
+            <i class="bi bi-clock-history stat-icon"></i>
+        </div>
+    </div>
 
-<table class="table table-bordered">
-<thead>
-<tr>
-    <th>Title</th>
-    <th>Price/Author</th>
-    <th>Source</th>
-</tr>
-</thead>
+    <!-- TOOLBAR -->
+    <div class="toolbar">
+        <div class="search-wrap">
+            <i class="bi bi-search"></i>
+            <input type="text" id="search-input" class="search-input"
+                placeholder="Tìm kiếm tiêu đề, tác giả..."
+                value="{{ keyword }}" autocomplete="off">
+        </div>
 
-<tbody id="table-body">
-{% for p in products %}
-<tr>
-    <td>{{ p[0] }}</td>
-    <td>{{ p[1] }}</td>
-    <td>{{ p[2] }}</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
+        <select id="type-filter" class="filter-select">
+            <option value="">Tất cả loại</option>
+            <option value="books" {% if data_type == 'books' %}selected{% endif %}>📚 Books</option>
+            <option value="quotes" {% if data_type == 'quotes' %}selected{% endif %}>💬 Quotes</option>
+        </select>
+
+        <select id="source-filter" class="filter-select">
+            <option value="">Tất cả nguồn</option>
+            <option value="playwright" {% if scraped_by == 'playwright' %}selected{% endif %}>Playwright</option>
+            <option value="selenium"   {% if scraped_by == 'selenium'   %}selected{% endif %}>Selenium</option>
+            <option value="scrapy"     {% if scraped_by == 'scrapy'     %}selected{% endif %}>Scrapy</option>
+        </select>
+
+        <button class="btn btn-primary" onclick="applyFilters(1)">
+            <i class="bi bi-funnel"></i> Lọc
+        </button>
+        <button class="btn btn-outline" onclick="resetFilters()">
+            <i class="bi bi-x-circle"></i> Xóa
+        </button>
+        <a href="/export/csv?keyword={{ keyword }}&data_type={{ data_type }}&scraped_by={{ scraped_by }}"
+           class="btn btn-green" id="btn-export-filtered">
+            <i class="bi bi-file-earmark-spreadsheet"></i> Xuất kết quả
+        </a>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-wrap">
+        <div class="table-header">
+            <div class="table-title"><i class="bi bi-table"></i> Dữ liệu thu thập</div>
+            <div class="result-count">
+                Hiển thị <span>{{ products|length }}</span> / <span>{{ total }}</span> bản ghi
+            </div>
+        </div>
+
+        <div id="table-container">
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Tiêu đề / Nội dung</th>
+                        <th>Giá / Tác giả</th>
+                        <th>Rating</th>
+                        <th>Chi tiết / Tags</th>
+                        <th>Loại</th>
+                        <th>Công cụ</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    {% if products %}
+                        {% for p in products %}
+                        <tr>
+                            <td style="color:var(--text-muted);font-size:12px;">{{ p.id }}</td>
+                            <td class="td-title" title="{{ p.title }}">{{ p.title }}</td>
+                            <td class="td-secondary">{{ p.secondary if p.secondary else '—' }}</td>
+                            <td class="stars">
+                                {% if p.rating and p.rating > 0 %}
+                                    {% for i in range(p.rating) %}⭐{% endfor %}
+                                {% else %}
+                                    <span style="color:var(--text-muted);font-size:12px;">—</span>
+                                {% endif %}
+                            </td>
+                            <td class="td-extra" title="{{ p.extra }}">{{ p.extra if p.extra else '—' }}</td>
+                            <td>
+                                {% if p.data_type == 'books' %}
+                                <span class="badge badge-books"><i class="bi bi-book"></i> Books</span>
+                                {% else %}
+                                <span class="badge badge-quotes"><i class="bi bi-chat-quote"></i> Quotes</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if p.scraped_by == 'playwright' %}
+                                <span class="badge badge-playwright">Playwright</span>
+                                {% elif p.scraped_by == 'selenium' %}
+                                <span class="badge badge-selenium">Selenium</span>
+                                {% else %}
+                                <span class="badge badge-scrapy">Scrapy</span>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr><td colspan="7">
+                            <div class="empty-state">
+                                <i class="bi bi-inbox"></i>
+                                <p>Chưa có dữ liệu. Nhấn <strong>Chạy Scraper</strong> hoặc chạy <code>python main.py</code>.</p>
+                            </div>
+                        </td></tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+
+        {% if total_pages > 1 %}
+        <div class="pagination-wrap">
+            <div style="font-size:13px;color:var(--text-muted);">Trang {{ page }} / {{ total_pages }}</div>
+            <div class="pagination">
+                {% set kw = keyword %}{% set dt = data_type %}{% set sb = scraped_by %}
+                <a href="?keyword={{ kw }}&data_type={{ dt }}&scraped_by={{ sb }}&page=1"
+                   class="page-btn {% if page == 1 %}disabled{% endif %}"><i class="bi bi-chevron-double-left"></i></a>
+                <a href="?keyword={{ kw }}&data_type={{ dt }}&scraped_by={{ sb }}&page={{ page - 1 }}"
+                   class="page-btn {% if page == 1 %}disabled{% endif %}"><i class="bi bi-chevron-left"></i></a>
+                {% for p in range([1, page-2]|max, [total_pages+1, page+3]|min) %}
+                <a href="?keyword={{ kw }}&data_type={{ dt }}&scraped_by={{ sb }}&page={{ p }}"
+                   class="page-btn {% if p == page %}active{% endif %}">{{ p }}</a>
+                {% endfor %}
+                <a href="?keyword={{ kw }}&data_type={{ dt }}&scraped_by={{ sb }}&page={{ page + 1 }}"
+                   class="page-btn {% if page == total_pages %}disabled{% endif %}"><i class="bi bi-chevron-right"></i></a>
+                <a href="?keyword={{ kw }}&data_type={{ dt }}&scraped_by={{ sb }}&page={{ total_pages }}"
+                   class="page-btn {% if page == total_pages %}disabled{% endif %}"><i class="bi bi-chevron-double-right"></i></a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</main>
+
+<!-- LOG MODAL -->
+<div id="log-modal">
+    <div class="log-box">
+        <div class="log-header">
+            <span><i class="bi bi-terminal"></i> Scraper Log</span>
+            <button class="btn btn-outline" style="padding:4px 10px;" onclick="document.getElementById('log-modal').classList.remove('open')">✕</button>
+        </div>
+        <div class="log-body" id="log-content">Đang tải log...</div>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"><i class="bi bi-check-circle-fill"></i> <span id="toast-msg"></span></div>
 
 <script>
-async function searchRealtime() {
-    let keyword = document.getElementById("search").value;
+    let debounceTimer;
+    let pollTimer;
 
-    let res = await fetch(`/search?keyword=${keyword}`);
-    let result = await res.json();
-
-    let table = document.getElementById("table-body");
-    table.innerHTML = "";
-
-    result.data.forEach(item => {
-        table.innerHTML += `
-        <tr>
-            <td>${item[0]}</td>
-            <td>${item[1]}</td>
-            <td>${item[2]}</td>
-        </tr>`;
+    document.getElementById('search-input').addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => applyFilters(1), 400);
+        updateExportLink();
     });
-}
-</script>
+    document.getElementById('type-filter').addEventListener('change', () => { applyFilters(1); });
+    document.getElementById('source-filter').addEventListener('change', () => { applyFilters(1); });
 
+    function applyFilters(page = 1) {
+        const keyword   = document.getElementById('search-input').value;
+        const data_type = document.getElementById('type-filter').value;
+        const scraped_by = document.getElementById('source-filter').value;
+        const url = new URL(window.location.href);
+        url.searchParams.set('keyword', keyword);
+        url.searchParams.set('data_type', data_type);
+        url.searchParams.set('scraped_by', scraped_by);
+        url.searchParams.set('page', page);
+        window.location.href = url.toString();
+    }
+
+    function resetFilters() {
+        window.location.href = '/';
+    }
+
+    function updateExportLink() {
+        const kw = document.getElementById('search-input').value;
+        const dt = document.getElementById('type-filter').value;
+        const sb = document.getElementById('source-filter').value;
+        const l  = document.getElementById('btn-export-filtered');
+        l.href = `/export/csv?keyword=${encodeURIComponent(kw)}&data_type=${encodeURIComponent(dt)}&scraped_by=${encodeURIComponent(sb)}`;
+    }
+
+    function showToast(msg, color) {
+        const t = document.getElementById('toast');
+        document.getElementById('toast-msg').textContent = msg;
+        t.style.borderColor = color || 'var(--accent)';
+        t.style.color = color || 'var(--accent)';
+        t.style.display = 'flex';
+        setTimeout(() => { t.style.display = 'none'; }, 4000);
+    }
+
+    function runScraper() {
+        const btn = document.getElementById('btn-run-scraper');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Đang chạy...';
+        fetch('/api/run-scraper', { method: 'POST' })
+            .then(r => r.json())
+            .then(d => {
+                if (d.status === 'started') {
+                    document.getElementById('scraper-status-bar').classList.remove('hidden');
+                    showToast('Scraper đã bắt đầu! Sẽ mất vài phút...', 'var(--accent3)');
+                    pollStatus();
+                } else {
+                    showToast(d.message, 'var(--accent2)');
+                    btn.disabled = false;
+                    btn.innerHTML = '<i class="bi bi-play-circle"></i> Chạy Scraper';
+                }
+            })
+            .catch(() => {
+                showToast('Không kết nối được server', 'var(--accent2)');
+                btn.disabled = false;
+                btn.innerHTML = '<i class="bi bi-play-circle"></i> Chạy Scraper';
+            });
+    }
+
+    function pollStatus() {
+        clearInterval(pollTimer);
+        pollTimer = setInterval(() => {
+            fetch('/api/scraper-status')
+                .then(r => r.json())
+                .then(d => {
+                    const msg = document.getElementById('scraper-status-msg');
+                    msg.textContent = d.running
+                        ? 'Đang chạy scrapers... (' + (d.log.length) + ' dòng log)'
+                        : 'Hoàn tất! Đang reload...';
+                    if (!d.running) {
+                        clearInterval(pollTimer);
+                        document.getElementById('btn-run-scraper').disabled = false;
+                        document.getElementById('btn-run-scraper').innerHTML = '<i class="bi bi-play-circle"></i> Chạy Scraper';
+                        showToast('Thu thập xong! Reload trang...', 'var(--accent)');
+                        setTimeout(() => location.reload(), 2000);
+                    }
+                });
+        }, 3000);
+    }
+
+    function pollLog() {
+        fetch('/api/scraper-status')
+            .then(r => r.json())
+            .then(d => {
+                const el = document.getElementById('log-content');
+                el.textContent = d.log.length ? d.log.join('\n') : '(Chưa có log)';
+                el.scrollTop = el.scrollHeight;
+            });
+        if (document.getElementById('log-modal').classList.contains('open')) {
+            setTimeout(pollLog, 2000);
+        }
+    }
+
+    document.getElementById('btn-export-csv').addEventListener('click', () => showToast('Đang xuất CSV...'));
+
+    // Auto-check scraper status on load
+    {% if scraper_running %}
+    document.getElementById('scraper-status-bar').classList.remove('hidden');
+    document.getElementById('btn-run-scraper').disabled = true;
+    document.getElementById('btn-run-scraper').innerHTML = '<i class="bi bi-hourglass-split"></i> Đang chạy...';
+    pollStatus();
+    {% endif %}
+</script>
 </body>
 </html>
