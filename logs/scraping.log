@@ -312,3 +312,31 @@ sqlite3.OperationalError: unable to open database file
 [2026-05-11 13:17:06] INFO     database — Database ready → D:\web-scraping-project\database\products.db
 [2026-05-11 13:17:30] INFO     database — Database ready → D:\web-scraping-project\database\products.db
 [2026-05-11 13:17:31] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 13:22:10] INFO     main — ============================================================
+[2026-05-11 13:22:10] INFO     main —   Web Scraping Project — Full Pipeline Start
+[2026-05-11 13:22:10] INFO     main — ============================================================
+[2026-05-11 13:22:10] INFO     main — [0/4] Khởi tạo database...
+[2026-05-11 13:22:10] INFO     database — Database ready → D:\web-scraping-project\database\products.db
+[2026-05-11 13:22:10] INFO     main — [1/4] Playwright → books.toscrape.com...
+[2026-05-11 13:22:11] INFO     playwright — [Playwright] Starting books.toscrape.com scraper...
+[2026-05-11 13:22:11] INFO     playwright —   [Playwright] Books page 1 → https://books.toscrape.com/
+[2026-05-11 13:22:18] INFO     playwright —   [Playwright] Books page 2 → https://books.toscrape.com/catalogue/page-2.html
+[2026-05-11 13:22:20] INFO     playwright —   [Playwright] Books page 3 → https://books.toscrape.com/catalogue/page-3.html
+[2026-05-11 13:22:22] INFO     playwright —   [Playwright] Books page 4 → https://books.toscrape.com/catalogue/page-4.html
+[2026-05-11 13:22:24] INFO     playwright —   [Playwright] Books page 5 → https://books.toscrape.com/catalogue/page-5.html
+[2026-05-11 13:22:26] INFO     playwright —   [Playwright] Books page 6 → https://books.toscrape.com/catalogue/page-6.html
+[2026-05-11 13:22:29] INFO     playwright —   [Playwright] Books page 7 → https://books.toscrape.com/catalogue/page-7.html
+[2026-05-11 13:22:32] INFO     playwright —   [Playwright] Books page 8 → https://books.toscrape.com/catalogue/page-8.html
+[2026-05-11 13:22:34] INFO     playwright —   [Playwright] Books page 9 → https://books.toscrape.com/catalogue/page-9.html
+[2026-05-11 13:22:36] INFO     playwright —   [Playwright] Books page 10 → https://books.toscrape.com/catalogue/page-10.html
+[2026-05-11 13:22:39] INFO     playwright —   [Playwright] Books page 11 → https://books.toscrape.com/catalogue/page-11.html
+[2026-05-11 13:22:41] INFO     playwright —   [Playwright] Books page 12 → https://books.toscrape.com/catalogue/page-12.html
+[2026-05-11 13:22:43] INFO     playwright —   [Playwright] Books page 13 → https://books.toscrape.com/catalogue/page-13.html
+[2026-05-11 13:22:45] INFO     playwright —   [Playwright] Books page 14 → https://books.toscrape.com/catalogue/page-14.html
+[2026-05-11 13:22:47] INFO     playwright —   [Playwright] Books page 15 → https://books.toscrape.com/catalogue/page-15.html
+[2026-05-11 13:22:49] INFO     playwright —   [Playwright] Books page 16 → https://books.toscrape.com/catalogue/page-16.html
+[2026-05-11 13:22:52] INFO     playwright —   [Playwright] Books page 17 → https://books.toscrape.com/catalogue/page-17.html
+[2026-05-11 13:22:54] INFO     playwright —   [Playwright] Books page 18 → https://books.toscrape.com/catalogue/page-18.html
+[2026-05-11 13:22:56] INFO     playwright —   [Playwright] Books page 19 → https://books.toscrape.com/catalogue/page-19.html
+[2026-05-11 13:22:58] INFO     playwright —   [Playwright] Books page 20 → https://books.toscrape.com/catalogue/page-20.html
+[2026-05-11 13:23:00] INFO     playwright —   [Playwright] Books page 21 → https://books.toscrape.com/catalogue/page-21.html
